@@ -1,0 +1,5 @@
+rpaframework==17.0.1
+pandas
+boto3
+python-decouple==3.4
+dateparser
