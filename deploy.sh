@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-export DOCKERHUB_REPO=dockerhubusername/image-name
+export DOCKERHUB_REPO=danielaron/demo-rpamaker
 export BUILD_VERSION=1
 
 docker build -t $DOCKERHUB_REPO:$BUILD_VERSION .
