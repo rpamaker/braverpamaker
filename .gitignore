@@ -8,3 +8,4 @@ report.html
 output.xml
 .env
 *.pyc
+venv/*

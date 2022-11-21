@@ -7,7 +7,6 @@ Library         OperatingSystem
 
 
 *** Keywords ***
-Open Local Browser 
-    [Arguments]    ${url}   
-    Open Browser     ${url}    Chrome
+Example Robot Keyword
+    Log   HOLAMUNDO DESDE KEYWORD
  
