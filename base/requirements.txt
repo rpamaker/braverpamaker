@@ -1,6 +1,7 @@
-robotframework
-robotframework-selenium2library
-robotframework-requests
+robotframework==6.0.2
+robotframework-pythonlibcore==4.0.0
+robotframework-requests==0.9.4
+robotframework-selenium2library==3.0.0
+robotframework-seleniumlibrary==6.0.0
 python-decouple==3.4
 rpamaker
-boto3
