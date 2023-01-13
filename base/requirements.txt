@@ -1,5 +1,5 @@
 robotframework
-robotframework-seleniumlibrary
+robotframework-selenium2library
 robotframework-requests
 python-decouple==3.4
 rpamaker
