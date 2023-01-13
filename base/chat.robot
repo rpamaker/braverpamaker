@@ -1,18 +1,33 @@
 
 
 *** Settings ***
-Library           Selenium2Library
 
-*** Variables ***
-${URL}            https://www.mercadolibre.com.uy/
-${WAIT_TIME}      15
-${SEARCH_TEXT}    kitesurf
+Documentation    A test suite for Mercadolibre.com.uy
+
+Library    Selenium2Library
+
+Suite Teardown    Close Browser
 
 *** Test Cases ***
-Open_MercadoLibre_UY_and_Search
-    Open Browser    ${URL}    chrome
-    Wait Until Page Contains    Entendido
-    Click Button    Entendido
-    Wait Until Page Contains    ${SEARCH_TEXT}
-    Input Text    xpath=//*[@id="header-search-form"]/div/div[1]/input    ${SEARCH_TEXT}
-    Press Key    xpath=//*[@id="header-search-form"]/div/div[1]/input    \\13
+
+Open Mercadolibre.com.uy
+
+[Documentation]    Open Mercadolibre.com.uy
+
+[Tags]    Open
+
+Log    Opening Browser To Mercadolibre.com.uy
+
+Open Browser    https://www.mercadolibre.com.uy/    chrome
+
+Wait Until Page Contains    Entendido
+
+Click Button    Entendido
+
+Wait Until Page Contains    Buscar
+
+Input Text    nav-search-input    kitesurf
+
+Hit Enter    nav-search-input
+
+Wait Until Page Contains    Resultados de la búsqueda
