@@ -1,8 +1,12 @@
 
 
-Open Browser    https://www.mercadolibre.com.uy/
-Input Text    id=query    kitesurf
-Wait Until Page Contains    Kitesurf
-Click Button    xpath=//*[@id="root-app"]/div/div[1]/div[2]/div/div[3]/div/div/div[1]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]
-Wait Until Page Contains    Kitesurf
-Close Browser
+*** Settings ***
+Library    Selenium2Library
+
+*** Test Cases ***
+Open_mercadolibre_and_search
+    Open Browser    https://www.mercadolibre.com.uy/    chrome
+    Input Text    id=id-search    kitesurf
+    Click Button    css=button.nav-search-btn
+    Page Should Contain    Mercado Libre Uruguay
+    Close Browser
