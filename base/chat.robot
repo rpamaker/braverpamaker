@@ -1,20 +1,16 @@
-, then click on the first product of the results
+
 
 *** Settings ***
-Library  Selenium2Library
+Library  SeleniumLibrary
 
 *** Variables ***
 ${URL}  https://www.mercadolibre.com.uy/
-${WAIT}  15
-${SEARCH}  kitesurf
 
 *** Test Cases ***
-Open Mercado Libre
+MercadoLibreTest
     Open Browser  ${URL}  chrome
-    Wait Until Page Contains Element  id=homesearch-form
-    Sleep  ${WAIT}
-    Click Button  xpath=//button[@class='ui-button ui-button--primary']
-    Input Text  xpath=//input[@id='query']  ${SEARCH}
+    Wait Until Element Is Visible  xpath=//button[@class='ml-accept-cookie']
+    Click Element  xpath=//button[@class='ml-accept-cookie']
+    Wait For  15s
+    Input Text  xpath=//input[@id='query']  kitesurf
     Press Key  xpath=//input[@id='query']  \\13
-    Wait Until Page Contains Element  xpath=//li[@class='ui-search-layout__item']
-    Click Link  xpath=//li[@class='ui-search-layout__item']
