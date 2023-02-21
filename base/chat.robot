@@ -3,10 +3,10 @@
 *** Settings ***
 Library    Selenium2Library
 
+*** Variables ***
+${URL}     https://www.google.com/search?q=new+for+match+%27Uruguay+Vs+Brasil%27
+
 *** Test Cases ***
-Match
-    Open Browser    https://www.google.com/    chrome
-    Sleep    3s
-    Input Text    name=q    Uruguay Vs Brasil
-    Click Button    name=btnK
-    Page Should Contain    Uruguay Vs Brasil
+Google
+    Open Browser    ${URL}    chrome
+    Sleep    15s
