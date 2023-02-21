@@ -4,13 +4,12 @@
 Library  SeleniumLibrary
 
 *** Variables ***
-${URL}  https://www.mercadolibre.com.uy/
+${URL}    https://www.mercadolibre.com.uy/
 
 *** Test Cases ***
-MercadoLibreTest
+TestMercadoLibre
     Open Browser  ${URL}  chrome
-    Wait Until Element Is Visible  xpath=//button[@class='ml-accept-cookie']
-    Click Element  xpath=//button[@class='ml-accept-cookie']
-    Wait For  15s
-    Input Text  xpath=//input[@id='query']  kitesurf
-    Press Key  xpath=//input[@id='query']  \\13
+    Wait Until Page Contains  Kitesurf
+    Input Text  name=as_word  Kitesurf
+    Sleep  15s
+    Press Key  name=as_word  \\13
