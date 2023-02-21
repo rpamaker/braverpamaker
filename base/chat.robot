@@ -1,16 +1,16 @@
 
 
 *** Settings ***
-Library           SeleniumLibrary
+Library    Selenium2Library
 
 *** Variables ***
-${BROWSER}        chrome
-${URL}            http://www.mercadolibre.com.uy
+${BROWSER}    chrome
+${URL}    https://www.google.com
 
 *** Test Cases ***
-Open Mercadolibre
+Test Case
     Open Browser    ${URL}    ${BROWSER}
-    Input Text      id=query    kitesurf
-    Wait Until Element Is Visible    xpath=//button[@type='submit']
-    Click Element   xpath=//button[@type='submit']
-    Wait              15s
+    Input Text    id=lst-ib    kitesurf
+    Sleep    15s
+    Press Key    id=lst-ib    \\13
+    Close Browser
