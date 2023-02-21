@@ -1,19 +1,9 @@
 
 
-*** Settings ***
-Library           Selenium2Library
-
-*** Variables ***
-${URL}             http://docs.seleniumhq.org/download/
-${BROWSER}         firefox
-${DELAY}           5
-
 *** Test Cases ***
-PDF
-    Open Browser    ${URL}    ${BROWSER}
-    Set Selenium Speed    ${DELAY}
-    Click Link    download
-    Click Link    ${LATEST_VERSION}
-    Click Link    selenium-server-standalone-${LATEST_VERSION}.jar
-    Wait Until Page Contains    Downloading
-    Page Should Contain    ${LATEST_VERSION}
+
+Google Uruguay Vs Brasil
+    [Documentation]    This test case seraches in google that: new for match 'Uruguay Vs Brasil'
+    Open Browser    https://www.google.com/search?q=new+for+match+%27Uruguay+Vs+Brasil%27
+    Sleep    3
+    Close Browser
