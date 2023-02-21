@@ -1,16 +1,12 @@
 
 
 *** Settings ***
-Library    SeleniumLibrary
-
-*** Variables ***
-${BROWSER}    Chrome
-${URL}    http://www.google.com
+Library           SeleniumLibrary
 
 *** Test Cases ***
-Open Google and Search Kitesurf
-    Open Browser    ${URL}    ${BROWSER}
+Open Google and search Kitesurf
+    Open Browser    https://www.google.com    chrome
     Wait Until Page Contains    Kitesurf
     Input Text    q    Kitesurf
-    Wait For 15 Seconds
-    Click Button    btnK
+    Wait Until Page Contains    Kitesurf
+    Wait For 15 seconds
