@@ -10,8 +10,7 @@ ${URL}  https://www.google.com
 *** Test Cases ***
 Open Google
     Open Browser  ${URL}  ${BROWSER}
-    Wait Until Page Contains  Google
+    Wait Until Page Contains  Kitesurf
     Sleep  15s
-    Input Text  name:q  kitesurf
-    Submit Form  name:q
-    Wait Until Page Contains  kitesurf
+    Input Text  name=q  Kitesurf
+    Submit Form  name=f
