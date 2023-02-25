@@ -1,17 +1,11 @@
 
 
 *** Settings ***
-Library    SeleniumLibrary
-
-*** Variables ***
-${BROWSER}    chrome
-${URL}    https://www.google.com
+Library           SeleniumLibrary
 
 *** Test Cases ***
-Open Google and Search Kitesurf
-    Open Browser    ${URL}    ${BROWSER}
-    Wait Until Page Contains    Kitesurfing
-    Input Text    name=q    Kitesurf
-    Sleep    15s
-    Click Button    name=btnK
-    Close Browser
+Open Google
+    Open Browser    https://www.google.com    chrome
+    Wait Until Page Contains    kitesurf    timeout=15s
+    Input Text    q    kitesurf
+    Submit Form    q
