@@ -1,11 +1,16 @@
 
 
 *** Settings ***
-Library           SeleniumLibrary
+Library  SeleniumLibrary
+
+*** Variables ***
+${BROWSER}  Chrome
+${URL}  http://www.google.com
 
 *** Test Cases ***
 Open Google
-    Open Browser    https://www.google.com    chrome
-    Wait Until Page Contains    kitesurf    timeout=15s
-    Input Text    q    kitesurf
-    Submit Form    q
+    Open Browser  ${URL}  ${BROWSER}
+    Wait Until Page Contains Element  name=q
+    Input Text  name=q  kitesurf
+    Wait  15s
+    Click Element  name=btnK
