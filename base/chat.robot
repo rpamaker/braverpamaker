@@ -1,14 +1,20 @@
- chrome
+
 
 *** Settings ***
-Library    SeleniumLibrary
+
+Library           Selenium2Library
 
 *** Variables ***
-${BROWSER}    Chrome
+
+${BROWSER}        chrome
+${URL}            http://www.google.com
 
 *** Test Cases ***
-Open Browser
-    Open Browser    ${BROWSER}    http://www.google.com
-    
-Close Browser
+
+Open Google
+    Open Browser    ${URL}    ${BROWSER}
+    Sleep           15s
+    Input Text      name=q    kitesurf
+    Submit Form     name=f
+    Sleep           15s
     Close Browser
