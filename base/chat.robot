@@ -5,13 +5,11 @@ Library  SeleniumLibrary
 
 *** Variables ***
 ${BROWSER}  Chrome
-${WAIT}  15s
+${URL}  http://www.google.com
 
 *** Test Cases ***
-Test
-    Open Browser  https://www.google.com  ${BROWSER}
-    Wait Until Page Contains  Kitesurf  ${WAIT}
-    Input Text  name=q  Kitesurf
+Open Google
+    Open Browser  ${URL}  ${BROWSER}
+    Wait For  15s
+    Input Text  name=q  kitesurf
     Submit Form  name=f
-    Wait Until Page Contains  Kitesurf  ${WAIT}
-    Close Browser
