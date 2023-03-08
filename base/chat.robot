@@ -1,15 +1,16 @@
 
 
 *** Settings ***
-Library  Selenium2Library
+Library    SeleniumLibrary
 
 *** Variables ***
-${URL}  http://www.google.com
+${BROWSER}    chrome
+${URL}    http://www.google.com
 
 *** Test Cases ***
-Open Google and Wait for 15 Seconds
-    Open Browser  ${URL}  chrome
-    Wait Until Page Contains  Kitesurf
-    Sleep  15s
-    Input Text  name=q  Kitesurf
-    Submit Form  name=f
+Open Google
+    Open Browser    ${URL}    ${BROWSER}
+    Wait Until Page Contains    Google
+    Sleep    15s
+    Input Text    name=q    kitesurf
+    Submit Form    name=btnK
