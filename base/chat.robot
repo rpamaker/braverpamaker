@@ -5,16 +5,14 @@ Library    SeleniumLibrary
 
 *** Variables ***
 ${BROWSER}    chrome
-${URL}    http://www.google.com
+${URL}    http://www.example.com
 
 *** Test Cases ***
-Open Google
+Example Test
     Open Browser    ${URL}    ${BROWSER}
-    Wait Until Page Contains    Kitesurf
-    ${title}=    Get Title
-    Should Be Equal    ${title}    Google
-    Sleep    15s
-    Input Text    name=q    Kitesurf
-    Submit Form    name=btnK
-    Wait Until Page Contains    Kitesurf
+    Maximize Browser Window
+    Input Text    id=username    test_user
+    Input Password    id=password    test_password
+    Click Button    id=login_button
+    Wait Until Page Contains    Welcome, test_user
     Close Browser
