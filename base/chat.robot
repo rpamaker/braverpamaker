@@ -1,16 +1,15 @@
 
 
 *** Settings ***
-Library    SeleniumLibrary
+Library  Selenium2Library
 
 *** Variables ***
-${URL}        https://www.mercadolibre.com
+${BROWSER}  chrome
+${URL}  https://www.google.com
 
 *** Test Cases ***
-Test Search
-    Open Browser    ${URL}    Chrome
-    Maximize Browser Window
-    Input Text    id=query    Televisor 40 pulgadas
-    Click Button    xpath=//button[@type='submit']
-    Wait Until Page Contains    Televisor 40 Pulgadas
-    Close Browser
+Open Google
+    Open Browser  ${URL}  ${BROWSER}
+    Sleep  15s
+    Input Text  id=lst-ib  kitesurf
+    Submit  name=btnK
