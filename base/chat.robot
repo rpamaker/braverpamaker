@@ -1,15 +1,16 @@
 
 
 *** Settings ***
-Library  Selenium2Library
+Library  SeleniumLibrary
 
 *** Variables ***
-${BROWSER}  chrome
+${BROWSER}  Chrome
 ${URL}  https://www.google.com
 
 *** Test Cases ***
 Open Google
     Open Browser  ${URL}  ${BROWSER}
-    Sleep  15s
-    Input Text  id=lst-ib  kitesurf
-    Submit  name=btnK
+    Maximize Browser Window
+    Wait For 15 Seconds
+    Input Text  name=q  kitesurf
+    Submit Form  name=btnK
