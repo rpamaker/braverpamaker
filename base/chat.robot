@@ -5,12 +5,12 @@ Library  SeleniumLibrary
 
 *** Variables ***
 ${BROWSER}  Chrome
-${URL}  https://www.google.com
+${URL}  http://www.google.com
 
 *** Test Cases ***
-Open Google
+Open Google and search Kitesurf
     Open Browser  ${URL}  ${BROWSER}
-    Maximize Browser Window
-    Wait For 15 Seconds
-    Input Text  name=q  kitesurf
-    Submit Form  name=btnK
+    Wait  15s
+    Input Text  name:q  Kitesurf
+    Submit Form  name:q
+    Page Should Contain  Kitesurf
