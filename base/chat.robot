@@ -1,16 +1,15 @@
 
 
 *** Settings ***
-Documentation    This script is used to search in google
-Library    SeleniumLibrary
+Library           Selenium2Library
 
 *** Variables ***
-${SEARCH_TERM}    Robot Framework
+${BROWSER}        chrome
 
 *** Test Cases ***
-Search In Google
-    Open Browser    http://www.google.com    chrome
-    Input Text    name:q    ${SEARCH_TERM}
-    Click Button    name:btnG
-    Page Should Contain    ${SEARCH_TERM}
+Search chat gpt
+    Open Browser    https://www.google.com    ${BROWSER}
+    Input Text    name:q    chat gpt
+    Submit Form    name:btnK
+    Page Should Contain    GPT-3 Chatbot
     Close Browser
