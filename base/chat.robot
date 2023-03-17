@@ -1,14 +1,17 @@
 
 
 *** Settings ***
-Library           SeleniumLibrary
+Library           Selenium2Library
 
 *** Variables ***
-${BROWSER}        Chrome
-${URL}            http://www.google.com
+${BROWSER}        chrome
+${URL}            https://www.google.com
 
 *** Test Cases ***
-Open Google
+Test Google
     Open Browser    ${URL}    ${BROWSER}
-    Maximize Browser Window
-    Title Should Be    Google
+    Wait Until Page Contains    kitesurf    timeout=15s
+    Input Text    q    kitesurf
+    Submit Form    q
+    Wait Until Page Contains    kitesurfing    timeout=15s
+    Close Browser
