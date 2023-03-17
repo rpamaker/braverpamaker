@@ -1,15 +1,16 @@
 
 
 *** Settings ***
-Library           SeleniumLibrary
+Library  OperatingSystem
 
 *** Variables ***
-${BROWSER}        chrome
+${TEST_DIR}  C:\\RobotTest
 
 *** Test Cases ***
-Test Hola
-    Open Browser    ${URL}    ${BROWSER}
-    Maximize Browser Window
-    Input Text    id=search_query_top    hola
-    Click Button    name=submit_search
-    Page Should Contain    Hola
+Test
+    [Tags]    smoke
+    Log To Console    This is a robot framework smoke test.
+    Create Directory    ${TEST_DIR}
+    Directory Should Exist    ${TEST_DIR}
+    Remove Directory    ${TEST_DIR}
+    Directory Should Not Exist    ${TEST_DIR}
