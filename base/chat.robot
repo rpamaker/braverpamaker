@@ -1,15 +1,15 @@
 
 
 *** Settings ***
-Library    Selenium2Library
+Library  SeleniumLibrary
 
 *** Variables ***
-${BROWSER}    chrome
+${Browser}  chrome
+${URL}  http://www.google.com
 
 *** Test Cases ***
-Chat GPT
-    Open Browser    https://www.google.com    ${BROWSER}
-    Input Text    name:q    chat gpt
-    Click Button    name:btnK
-    Page Should Contain    GPT-3
-    Close Browser
+Buscar en Google
+    Open Browser  ${URL}  ${Browser}
+    Input Text  name=q  Robot Framework
+    Click Button  name=btnK
+    Page Should Contain  Robot Framework
