@@ -1,17 +1,15 @@
 
 
 *** Settings ***
-Library  SeleniumLibrary
+Library    Selenium2Library
 
 *** Variables ***
-${URL}  https://example.com
+${BROWSER}    Chrome
+${URL}    http://www.example.com
 
 *** Test Cases ***
 Example Test
-    Open Browser  ${URL}  chrome
+    Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
-    Input Text  id=username  testuser
-    Input Text  id=password  testpass
-    Click Element  id=login_button
-    Title Should Be  Welcome to Example Page
+    Page Should Contain    Example Domain
     Close Browser
