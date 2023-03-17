@@ -4,13 +4,12 @@
 Library  SeleniumLibrary
 
 *** Variables ***
-${BROWSER}  Chrome
+${BROWSER}  chrome
 ${URL}  https://www.google.com
 
 *** Test Cases ***
-Open Google
+Buscar en Google
     Open Browser  ${URL}  ${BROWSER}
-    Wait Until Page Contains Element  name:q
-    Input Text  name:q  kitesurf
-    Sleep  15s
-    Submit Form  name:q
+    Input Text  name=q  Robot Framework
+    Submit Form  name=f
+    Page Should Contain  Robot Framework
