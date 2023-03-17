@@ -1,12 +1,12 @@
 
 
-*** Settings ***
-Library  OperatingSystem
+*** Settings *** 
+Library  OperatingSystem 
 
-*** Test Cases ***
-Hola
-    [Tags]  Hola
-    Log  Hello!
-    Run  echo Hola
-    ${output}=  Run  echo Hola
-    Should Be Equal  ${output}  Hola
+*** Variables *** 
+${message}  Holaa 
+
+*** Test Cases *** 
+Say Hello 
+    Log  ${message} 
+    Run  echo  ${message}
