@@ -1,17 +1,17 @@
 
 
 *** Settings ***
-Library    SeleniumLibrary
+Library  SeleniumLibrary
 
 *** Variables ***
-${BROWSER}    Chrome
-${URL}    http://www.google.com
+${URL}  https://example.com
 
 *** Test Cases ***
-Google
-    Open Browser    ${URL}    ${BROWSER}
-    Title Should Be    Google
-    Input Text    id=lst-ib    robot framework
-    Click Button    name=btnK
-    Page Should Contain    robot framework
+Example Test
+    Open Browser  ${URL}  chrome
+    Maximize Browser Window
+    Input Text  id=username  testuser
+    Input Text  id=password  testpass
+    Click Element  id=login_button
+    Title Should Be  Welcome to Example Page
     Close Browser
