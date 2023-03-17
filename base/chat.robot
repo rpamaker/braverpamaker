@@ -1,16 +1,17 @@
 
 
 *** Settings ***
-Library  OperatingSystem
+Library    SeleniumLibrary
 
 *** Variables ***
-${TEST_DIR}  C:\\RobotTest
+${BROWSER}    Chrome
+${URL}    http://www.google.com
 
 *** Test Cases ***
-Test
-    [Tags]    smoke
-    Log To Console    This is a robot framework smoke test.
-    Create Directory    ${TEST_DIR}
-    Directory Should Exist    ${TEST_DIR}
-    Remove Directory    ${TEST_DIR}
-    Directory Should Not Exist    ${TEST_DIR}
+Google
+    Open Browser    ${URL}    ${BROWSER}
+    Title Should Be    Google
+    Input Text    id=lst-ib    robot framework
+    Click Button    name=btnK
+    Page Should Contain    robot framework
+    Close Browser
