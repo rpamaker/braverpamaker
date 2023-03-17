@@ -1,16 +1,15 @@
 
 
 *** Settings ***
-Library    SeleniumLibrary
+Library           SeleniumLibrary
 
 *** Variables ***
-${BROWSER}    chrome
-${URL}    https://www.google.com
+${BROWSER}        chrome
 
 *** Test Cases ***
-Open Google
+Test Hola
     Open Browser    ${URL}    ${BROWSER}
-    Wait Until Page Contains    Kitesurf
-    Sleep    15s
-    Input Text    q    Kitesurf
-    Submit Form    q
+    Maximize Browser Window
+    Input Text    id=search_query_top    hola
+    Click Button    name=submit_search
+    Page Should Contain    Hola
