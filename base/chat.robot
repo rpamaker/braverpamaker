@@ -1,16 +1,11 @@
-a
+
 
 *** Settings ***
-Library           SeleniumLibrary
+Library  OperatingSystem
 
 *** Variables ***
-${BROWSER}        chrome
+${greeting}  Hola
 
 *** Test Cases ***
-Test Login
-    Open Browser    http://example.com    ${BROWSER}
-    Input Text      id=username    admin
-    Input Password  id=password    admin
-    Click Button    id=login
-    Page Should Contain    Welcome Admin
-    Close Browser
+Test Greeting
+    Log  ${greeting}
