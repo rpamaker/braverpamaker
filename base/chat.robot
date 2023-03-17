@@ -1,15 +1,16 @@
 
 
 *** Settings ***
-Library  SeleniumLibrary
+Documentation    This script is used to search in google
+Library    SeleniumLibrary
 
 *** Variables ***
-${BROWSER}  chrome
-${URL}  https://www.google.com
+${SEARCH_TERM}    Robot Framework
 
 *** Test Cases ***
-Buscar en Google
-    Open Browser  ${URL}  ${BROWSER}
-    Input Text  name=q  Robot Framework
-    Submit Form  name=f
-    Page Should Contain  Robot Framework
+Search In Google
+    Open Browser    http://www.google.com    chrome
+    Input Text    name:q    ${SEARCH_TERM}
+    Click Button    name:btnG
+    Page Should Contain    ${SEARCH_TERM}
+    Close Browser
