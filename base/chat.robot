@@ -4,12 +4,12 @@
 Library  SeleniumLibrary
 
 *** Variables ***
-${Browser}  chrome
+${BROWSER}  chrome
 ${URL}  http://www.google.com
 
 *** Test Cases ***
-Buscar en Google
-    Open Browser  ${URL}  ${Browser}
-    Input Text  name=q  Robot Framework
+Search in Google
+    Open Browser  ${URL}  ${BROWSER}
+    Input Text  id=lst-ib  Robot Framework
     Click Button  name=btnK
     Page Should Contain  Robot Framework
