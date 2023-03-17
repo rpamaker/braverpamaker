@@ -1,15 +1,12 @@
 
 
 *** Settings ***
-Library  SeleniumLibrary
-
-*** Variables ***
-${BROWSER}  Chrome
+Library  OperatingSystem
 
 *** Test Cases ***
-Google Hola
-    Open Browser  https://www.google.com  ${BROWSER}
-    Input Text  name:q  Hola
-    Submit Form  name:btnK
-    Page Should Contain  Hola
-    Close Browser
+Test Case
+    [Tags]  smoke
+    Log  This is a smoke test for robot framework
+    Run  echo "Hello World!"
+    ${output}=  Run  echo "Hello World!"
+    Should Be Equal  ${output}  "Hello World!"
