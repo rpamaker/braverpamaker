@@ -1,15 +1,16 @@
 
 
 *** Settings ***
-Library    Selenium2Library
+
+Documentation    This script tests a simple hello world program
+Library          OperatingSystem
 
 *** Variables ***
-${BROWSER}    Chrome
-${URL}    http://www.example.com
+${hello_world_program}    hello_world.py
 
 *** Test Cases ***
-Example Test
-    Open Browser    ${URL}    ${BROWSER}
-    Maximize Browser Window
-    Page Should Contain    Example Domain
-    Close Browser
+
+Test Hello World
+    [Documentation]    This test runs the hello world program
+    Run     python     ${hello_world_program}
+    Should Contain    stdout    Hello World!
