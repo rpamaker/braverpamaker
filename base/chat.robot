@@ -1,11 +1,11 @@
 
 
 *** Settings ***
+
 Library  OperatingSystem
 
-*** Variables ***
-${greeting}  Hola
-
 *** Test Cases ***
-Test Greeting
+
+Say Hello
+    ${greeting}=  Run  echo "Hola"
     Log  ${greeting}
