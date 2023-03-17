@@ -1,16 +1,15 @@
 
 
 *** Settings ***
-
-Documentation    This script tests a simple hello world program
-Library          OperatingSystem
+Library  SeleniumLibrary
 
 *** Variables ***
-${hello_world_program}    hello_world.py
+${BROWSER}  Chrome
 
 *** Test Cases ***
-
-Test Hello World
-    [Documentation]    This test runs the hello world program
-    Run     python     ${hello_world_program}
-    Should Contain    stdout    Hello World!
+Google Hola
+    Open Browser  https://www.google.com  ${BROWSER}
+    Input Text  name:q  Hola
+    Submit Form  name:btnK
+    Page Should Contain  Hola
+    Close Browser
