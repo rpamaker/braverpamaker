@@ -1,15 +1,14 @@
 
 
 *** Settings ***
-Library  SeleniumLibrary
+Library    SeleniumLibrary
 
 *** Variables ***
-${BROWSER}  chrome
-${URL}  http://www.google.com
+${BROWSER}    Chrome
+${URL}    https://www.mercadolibre.com.ar/
 
 *** Test Cases ***
-Search in Google
-    Open Browser  ${URL}  ${BROWSER}
-    Input Text  id=lst-ib  Robot Framework
-    Click Button  name=btnK
-    Page Should Contain  Robot Framework
+Open Mercado Libre
+    Open Browser    ${URL}    ${BROWSER}
+    Maximize Browser Window
+    Title Should Be    Mercado Libre Argentina - Donde comprar y vender de todo
