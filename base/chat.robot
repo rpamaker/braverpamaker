@@ -1,15 +1,19 @@
 
 
 *** Settings ***
-Library  SeleniumLibrary
+
+Library    SeleniumLibrary
 
 *** Variables ***
-${BROWSER}  Chrome
+
+${SEARCH_TERM}    robotframework
 
 *** Test Cases ***
-Search for CHAT GPT
-    Open Browser  https://www.google.com  ${BROWSER}
-    Input Text  name:q  CHAT GPT
-    Submit Form  name:btnK
-    Page Should Contain  CHAT GPT
+
+Search Google
+    [Tags]    smoke
+    Open Browser    https://www.google.com    chrome
+    Input Text    name:q    ${SEARCH_TERM}
+    Submit Form    name:btnK
+    Page Should Contain    Robot Framework
     Close Browser
