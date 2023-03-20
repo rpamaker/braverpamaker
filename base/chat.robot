@@ -1,16 +1,15 @@
 
 
 *** Settings ***
-Library    Selenium2Library
+Library  SeleniumLibrary
 
 *** Variables ***
-${BROWSER}    chrome
-${URL}    http://www.google.com
+${BROWSER}  Chrome
 
 *** Test Cases ***
-Search in Google
-    Open Browser    ${URL}    ${BROWSER}
-    Input Text    id=lst-ib    robotframework
-    Click Button    name=btnG
-    Page Should Contain    robotframework
+Search for CHAT GPT
+    Open Browser  https://www.google.com  ${BROWSER}
+    Input Text  name:q  CHAT GPT
+    Submit Form  name:btnK
+    Page Should Contain  CHAT GPT
     Close Browser
