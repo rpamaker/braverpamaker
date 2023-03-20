@@ -1,17 +1,21 @@
 
 
 *** Settings ***
-Library  SeleniumLibrary
+
+Library           Selenium2Library
 
 *** Variables ***
-${BROWSER}  Chrome
-${URL}  http://www.google.com
+
+${BROWSER}    chrome
+${URL}        https://www.facebook.com/
 
 *** Test Cases ***
-Google Search
-    Open Browser  ${URL}  ${BROWSER}
-    Maximize Browser Window
-    Input Text  name=q  robotframework
-    Submit Form  name=btnK
-    Page Should Contain  Robot Framework
-    Close Browser
+
+Facebook Login
+    Open Browser    ${URL}    ${BROWSER}
+    Input Text    id=email    ${EMAIL}
+    Input Password    id=pass    ${PASSWORD}
+    Click Button    id=loginbutton
+    Wait Until Page Contains    Home
+    Page Should Contain    Home
+    [Teardown]    Close Browser
