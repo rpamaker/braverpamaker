@@ -1,19 +1,15 @@
 
 
 *** Settings ***
-
-Library    SeleniumLibrary
+Library  Selenium2Library
 
 *** Variables ***
-
-${SEARCH_TERM}    robotframework
+${BROWSER}  chrome
 
 *** Test Cases ***
-
 Search Google
-    [Tags]    smoke
-    Open Browser    https://www.google.com    chrome
-    Input Text    name:q    ${SEARCH_TERM}
-    Submit Form    name:btnK
-    Page Should Contain    Robot Framework
+    Open Browser  http://www.google.com  ${BROWSER}
+    Input Text  name=q  robot framework
+    Submit Form  name=btnK
+    Page Should Contain  Robot Framework
     Close Browser
