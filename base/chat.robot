@@ -1,21 +1,14 @@
 
 
 *** Settings ***
-
-Library           Selenium2Library
+Library    Selenium2Library
 
 *** Variables ***
-
-${BROWSER}    chrome
-${URL}        https://www.facebook.com/
+${BROWSER}    Chrome
+${URL}    https://www.mercadolibre.com/
 
 *** Test Cases ***
-
-Facebook Login
+Abrir Mercadolibre
     Open Browser    ${URL}    ${BROWSER}
-    Input Text    id=email    ${EMAIL}
-    Input Password    id=pass    ${PASSWORD}
-    Click Button    id=loginbutton
-    Wait Until Page Contains    Home
-    Page Should Contain    Home
-    [Teardown]    Close Browser
+    Maximize Browser Window
+    Page Should Contain    Mercado Libre Argentina - Donde comprar y vender de todo
