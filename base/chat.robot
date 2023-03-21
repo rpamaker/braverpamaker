@@ -1,13 +1,15 @@
 
 
 *** Settings ***
-Library           SeleniumLibrary
+
+Library  SeleniumLibrary
 
 *** Variables ***
-${BROWSER}        Chrome
-${URL}            google.com
+${BROWSER}  Chrome
 
 *** Test Cases ***
-Abrir Google
-    Open Browser    ${URL}    ${BROWSER}
-    Wait Until Page Contains    60s
+Open Google
+    Open Browser  http://www.google.com  ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed  0.5s
+    Title Should Be  Google
