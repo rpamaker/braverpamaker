@@ -3,11 +3,8 @@
 *** Settings ***
 Library  Selenium2Library
 
-*** Variables ***
-${BROWSER}  chrome
-
 *** Test Cases ***
-Open browser and go to www.stripe.com
-    Open Browser  ${BROWSER}  https://www.stripe.com
-    Maximize Browser Window
-    Wait Until Page Contains  Stripe: Payment processing for internet businesses
+Open Google
+    Open Browser  http://www.google.com  chrome
+    Wait Until Page Contains  Google
+    Sleep  60s
