@@ -1,16 +1,16 @@
 
 
 *** Settings ***
-Library    SeleniumLibrary
+Library           Selenium2Library
 
 *** Variables ***
 ${BROWSER}    Chrome
-${URL}    https://www.google.com
-${DELAY}    60s
+${URL}    http://www.google.com
 
 *** Test Cases ***
-Open Chrome
+Abrir Google
     Open Browser    ${URL}    ${BROWSER}
-    Wait Until Page Contains    Google
-    Sleep    ${DELAY}
-    Close Browser
+    Maximize Browser Window
+    Input Text    name:q    ciudad de montevideo
+    Wait Until Page Contains    Montevideo
+    Sleep    60s
