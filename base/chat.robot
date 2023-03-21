@@ -1,14 +1,17 @@
 
 
 *** Settings ***
-Library    SeleniumLibrary
+Library  SeleniumLibrary
 
 *** Variables ***
-${BROWSER}    Chrome
-${URL}    https://www.google.com
+${URL}  https://www.example.com
 
 *** Test Cases ***
-Open Google
-    Open Browser    ${URL}    ${BROWSER}
-    Maximize Browser Window
-    Title Should Be    Google
+Test Login
+    Open Browser  ${URL}  chrome
+    Input Text  id=username  admin
+    Input Password  id=password  admin
+    Click Button  id=login
+    Sleep  3s
+    Page Should Contain  Welcome
+    Close Browser
