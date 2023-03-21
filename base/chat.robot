@@ -4,14 +4,10 @@
 Library  SeleniumLibrary
 
 *** Variables ***
-${URL}  https://www.example.com
+${BROWSER}  chrome
 
 *** Test Cases ***
-Test Login
-    Open Browser  ${URL}  chrome
-    Input Text  id=username  admin
-    Input Password  id=password  admin
-    Click Button  id=login
-    Sleep  3s
-    Page Should Contain  Welcome
-    Close Browser
+Open Google
+    Open Browser  https://www.google.com  ${BROWSER}
+    Maximize Browser Window
+    Title Should Be  Google
