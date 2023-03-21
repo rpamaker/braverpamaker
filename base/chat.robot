@@ -1,11 +1,14 @@
 
 
 *** Settings ***
-Library  Selenium2Library
+Library    SeleniumLibrary
+
+*** Variables ***
+${BROWSER}    Chrome
+${URL}    https://www.google.com
 
 *** Test Cases ***
 Open Google
-    Open Browser  https://www.google.com  chrome
+    Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
-    Input Text  id=lst-ib  robotframework
-    Click Button  name=btnK
+    Title Should Be    Google
