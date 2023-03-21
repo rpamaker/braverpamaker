@@ -1,14 +1,13 @@
 
 
 *** Settings ***
-Library    Selenium2Library
+Library  Selenium2Library
 
 *** Variables ***
-${BROWSER}    Chrome
-${URL}    https://www.mercadolibre.com/
+${BROWSER}  chrome
 
 *** Test Cases ***
-Abrir Mercadolibre
-    Open Browser    ${URL}    ${BROWSER}
+Open browser and go to www.stripe.com
+    Open Browser  ${BROWSER}  https://www.stripe.com
     Maximize Browser Window
-    Page Should Contain    Mercado Libre Argentina - Donde comprar y vender de todo
+    Wait Until Page Contains  Stripe: Payment processing for internet businesses
