@@ -1,15 +1,11 @@
 
 
 *** Settings ***
-
-Library  SeleniumLibrary
-
-*** Variables ***
-${BROWSER}  Chrome
+Library  Selenium2Library
 
 *** Test Cases ***
 Open Google
-    Open Browser  http://www.google.com  ${BROWSER}
+    Open Browser  https://www.google.com  chrome
     Maximize Browser Window
-    Set Selenium Speed  0.5s
-    Title Should Be  Google
+    Input Text  id=lst-ib  robotframework
+    Click Button  name=btnK
