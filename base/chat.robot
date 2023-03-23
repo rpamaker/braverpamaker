@@ -1,14 +1,13 @@
-
+ chrome
 
 *** Settings ***
-Library  SeleniumLibrary
+Library  Selenium2Library
 
 *** Variables ***
 ${BROWSER}  Chrome
-${URL}  http://www.google.com
 
 *** Test Cases ***
-Google Search
-    Open Browser  ${URL}  ${BROWSER}
-    Wait Until Page Contains  Google
-    Sleep  10s
+Open Google Chrome
+    Open Browser  ${BROWSER}  https://www.google.com
+    Maximize Browser Window
+    Title Should Be  Google
