@@ -1,13 +1,14 @@
 
 
 *** Settings ***
-Library  SeleniumLibrary
+Library  Selenium2Library
 
 *** Variables ***
-${BROWSER}  chrome
+${BROWSER}    Chrome
+${URL}    https://www.google.com
 
 *** Test Cases ***
-Open Google
-    Open Browser  https://www.google.com  ${BROWSER}
-    Wait Until Page Contains Element  name:q  timeout=10s
-    Close Browser
+Abrir Google
+    Open Browser    ${URL}    ${BROWSER}
+    Wait Until Page Contains    Google
+    Sleep    10s
