@@ -1,13 +1,10 @@
- chrome
+
 
 *** Settings ***
-Library  Selenium2Library
-
-*** Variables ***
-${BROWSER}  Chrome
+Library    Selenium2Library
 
 *** Test Cases ***
-Open Google Chrome
-    Open Browser  ${BROWSER}  https://www.google.com
+Open Google
+    Open Browser    https://www.google.com    chrome
     Maximize Browser Window
-    Title Should Be  Google
+    Page Should Contain    Google
