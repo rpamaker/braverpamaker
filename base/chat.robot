@@ -1,14 +1,13 @@
 
 
 *** Settings ***
-Library  Selenium2Library
+Library  SeleniumLibrary
 
 *** Variables ***
 ${BROWSER}  chrome
-${URL}  http://www.google.com
 
 *** Test Cases ***
 Open Google
-    Open Browser  ${URL}  ${BROWSER}
-    Maximize Browser Window
-    Title Should Be  Google
+    Open Browser  https://www.google.com  ${BROWSER}
+    Wait Until Page Contains Element  name:q  timeout=10s
+    Close Browser
