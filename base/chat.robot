@@ -3,10 +3,13 @@
 *** Settings ***
 Library  SeleniumLibrary
 
+*** Variables ***
+${URL}  http://www.google.com
+
 *** Test Cases ***
-Search In Google
-    Open Browser  http://www.google.com  chrome
-    Input Text  id=lst-ib  robotframework
-    Click Button  name=btnG
-    Page Should Contain  robotframework
-    Close Browser
+Google Search
+    Open Browser  ${URL}  chrome
+    Maximize Browser Window
+    Input Text  name=q  Robot Framework
+    Submit Form  name=btnK
+    Page Should Contain  Robot Framework
