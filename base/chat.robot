@@ -1,15 +1,14 @@
 
 
 *** Settings ***
-Library  SeleniumLibrary
+Library  Selenium2Library
 
 *** Variables ***
+${BROWSER}  chrome
 ${URL}  http://www.google.com
 
 *** Test Cases ***
-Google Search
-    Open Browser  ${URL}  chrome
+Open Google
+    Open Browser  ${URL}  ${BROWSER}
     Maximize Browser Window
-    Input Text  name=q  Robot Framework
-    Submit Form  name=btnK
-    Page Should Contain  Robot Framework
+    Title Should Be  Google
