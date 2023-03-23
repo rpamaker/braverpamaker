@@ -1,10 +1,10 @@
 
 
 *** Settings ***
-Library           SeleniumLibrary
+Library           Selenium2Library
 
 *** Variables ***
-${BROWSER}        Chrome
+${BROWSER}        chrome
 ${URL}            https://www.google.com
 
 *** Test Cases ***
